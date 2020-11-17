@@ -43,11 +43,16 @@ public class SungJukV3b {
             System.out.print("이름 입력 : ");
             name[i] = sc.nextLine();
             System.out.print("국어점수입력 : ");
-            kor[i] = sc.nextInt();
+            kor[i] = Integer.parseInt(sc.nextLine());
             System.out.print("영어점수입력 : ");
-            eng[i] = sc.nextInt();
+            eng[i] = Integer.parseInt(sc.nextLine());
             System.out.print("수학점수입력 : ");
-            met[i] = sc.nextInt();
+            met[i] = Integer.parseInt(sc.nextLine());
+
+            //sc.skip("\r\n|[\n\r]");
+            //수학성적입력시 같이입력된 enter 키가 다음 데이터(이름) 입력시 입력값으로
+            //자동적으로 전달됨
+            //그러한 상황을 해결하기 위해 미리 엔터키를 제거하는 코드 삽입
         }
         for (int i = 0; i < 3; i++) {
             sum[i] = kor[i] + eng[i] + met[i];
@@ -76,14 +81,7 @@ public class SungJukV3b {
             }
         }
 
-        //Math.round(값)
-        //98765.4321 => round => 98765
-        //98765.4321*100 => 9876543.21
-        //round(9876543.21) => 9876543
-        //9876543/100 => 98765.43
-        // mean = Math.round(mean * 100) / 100.0;
 
-        //String.valueOf(값) 숫자를 문자로 변환
         for (int i = 0; i < 3; i++) {
             System.out.printf(fmt, name[i], kor[i], eng[i], met[i], sum[i], mean[i], grd[i]);
 
@@ -91,7 +89,7 @@ public class SungJukV3b {
             //System.out.println("이름 : " + name + "\n국어 : " + kor + "\n영어 : " + eng + "\n수학 : " + met + "\n--------------\n총점 : " + sum + "\n평균 : " + mean + "\n학점 = " + grd);
 
         }
-        //문자열 연결 연산자로 문장을 만드는경우에 String 변수의 특성때문에 성능저하 발생
+
 
 
 
