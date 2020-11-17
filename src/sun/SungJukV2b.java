@@ -62,7 +62,7 @@ public class SungJukV2b {
         //round(9876543.21) => 9876543
         //9876543/100 => 98765.43
        mean = Math.round(mean * 100)/100.0;
-
+        //String.valueOf(값) 숫자를 문자로 변환
         result = String.format(fmt, name, kor, eng, met, sum, String.valueOf(mean), grd);
 
        // System.out.println("이름 : " +name+ "\n국어 : " +kor+ "\n영어 : " +eng+ "\n수학 : " +met+ "\n--------------\n총점 : " +sum+ "\n평균 : " +mean+ "\n학점 = " +grd);
