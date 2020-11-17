@@ -33,35 +33,8 @@ public class SungJukV1 {
         System.out.printf("국어 =%3d\n영어 =%3d\n수학 =%3d\n",kor,eng,met);
         System.out.println("--------------------");
         System.out.printf("총점 = %3d\n평균 = %.1f\n",sum,mean);
+        System.out.println("학점 = "+grd);
 
-
-      if(mean==100)
-      {
-          grd = '만';
-          System.out.println("성적 = " + grd+"점");
-      }
-      else if(mean<=99 && mean>90)
-      {
-          grd = '수';
-          System.out.println("성적 = " + grd);
-      }
-      else if(mean<=99 && mean>=90)
-      {
-          grd = '우';
-          System.out.println("성적 = " + grd);
-      } else if(mean<=89 && mean>=80)
-      {
-          grd = '미';
-          System.out.println("성적 = " + grd);
-      } else if(mean<=79 && mean>=70)
-      {
-          grd = '양';
-          System.out.println("성적 = " + grd);
-      } else
-      {
-          grd = '가';
-          System.out.println("성적 = " + grd);
-      }
 
     }
 }
