@@ -26,56 +26,44 @@ public class SungJukV2 {
         double mean = 0;
         char grd;
 
+        //성적데이터를 키보드로 입력받기 위해
+        // Scanner 클래스 초기화
+
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("이름 입력 : ");
-        Scanner scanner = new Scanner(System.in);
-        name = scanner.next();
-
+        name = sc.nextLine();
         System.out.print("국어점수입력 : ");
-        Scanner scanner1 = new Scanner(System.in);
-        kor = scanner.nextInt();
-
+        kor = sc.nextInt();
         System.out.print("영어점수입력 : ");
-        Scanner scanner2 = new Scanner(System.in);
-        eng = scanner.nextInt();
-
+        eng = sc.nextInt();
         System.out.print("수학점수입력 : ");
-        Scanner scanner3 = new Scanner(System.in);
-        met = scanner.nextInt();
-
+        met = sc.nextInt();
         sum = kor + eng + met;
         mean = sum / 3;
 
-
-        grd = (mean >= 90) ? '수':
-                (mean >= 80) ? '우':
-                        (mean >= 70) ? '미':
-                                (mean >= 60) ? '양':'가';
-
-        switch (grd)
+        //학점 계산은 swicth문으로 처리
+        switch ((int)(mean/10))
         {
-            case '수' :
-                break;
-
-            case '우' :
-                break;
-
-            case '미' :
-                break;
-
-            case '양' :
-                break;
-
-            case '가' :
-                break;
-
+            case 10 : grd = '수'; break;
+            case 9 : grd = '우'; break;
+            case 8 : grd = '미'; break;
+            case 7 : grd = '양'; break;
+            default : grd = '가'; break;
         }
 
+        //string.format(형식지정자,변수들
+        mean= Double.parseDouble(
+                String.format("%.1f", mean));
 
-        System.out.printf("이름 : %s \n",name);
-        System.out.printf("국어 =%3d\n영어 =%3d\n수학 =%3d\n",kor,eng,met);
-        System.out.println("--------------------");
-        System.out.printf("총점 = %3d\n평균 = %.1f\n",sum,mean);
+
+        System.out.println("이름 : "+ name);
+        System.out.println("국어 : "+ kor);
+        System.out.println("영어 : "+ eng);
+        System.out.println("수학 : "+ met);
+        System.out.println("--------------");
+        System.out.println("총점 : "+ sum);
+        System.out.println("평균 : "+ mean);
         System.out.println("학점 = "+grd);
 
 
