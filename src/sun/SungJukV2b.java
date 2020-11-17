@@ -29,7 +29,7 @@ public class SungJukV2b {
         int kor, eng, met, sum;
         double mean;
         char grd;
-        String fmt = "이름 : %s\n국어 : %d\n영어 : %d\n수학 : %d\n합계 : %d\n평균 : %.2f\n학점 : %c\n";
+        String fmt = "이름 : %s\n국어 : %d\n영어 : %d\n수학 : %d\n합계 : %d\n평균 : %s\n학점 : %c\n";
         String result;
 
         Scanner sc = new Scanner(System.in);
@@ -63,7 +63,7 @@ public class SungJukV2b {
         //9876543/100 => 98765.43
        mean = Math.round(mean * 100)/100.0;
 
-        result = String.format(fmt, name, kor, eng, met, sum, mean, grd);
+        result = String.format(fmt, name, kor, eng, met, sum, String.valueOf(mean), grd);
 
        // System.out.println("이름 : " +name+ "\n국어 : " +kor+ "\n영어 : " +eng+ "\n수학 : " +met+ "\n--------------\n총점 : " +sum+ "\n평균 : " +mean+ "\n학점 = " +grd);
 
