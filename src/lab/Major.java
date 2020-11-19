@@ -4,6 +4,20 @@ public class Major {
 
     String major;
     String phone;
-    String address;
-    String boss;
+    String office;
+    String chief; //학과장
+
+    public Major(){
+        major = "의상디자인";
+        phone = "234-5678-9012";
+        office = "A동 1층";
+        chief = "301";
+
+    }
+    public Major(String major, String phone, String office, String chief) {
+        this.major = major;
+        this.phone = phone;
+        this.office = office;
+        this.chief = chief;
+    }
 }
