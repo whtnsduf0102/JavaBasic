@@ -8,9 +8,12 @@ package sun;
 public class Overriding {
     public static void main(String[] args) {
         Cat c = new Cat();
-        System.out.println(c.cry());
         Dog d = new Dog();
+        Animal a = new Animal(); //부모클래스 객체화
+
+        System.out.println(c.cry());
         System.out.println(d.cry());
+        System.out.println(a.cry());
     }
 }
 class Animal {

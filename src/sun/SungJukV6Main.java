@@ -137,7 +137,6 @@ class MidSungJuk {
 
     protected void printSungJuk() {
         String fmt = "이름 : %s\n국어 : %d\n영어 : %d\n수학 : %d\n합계 : %d\n평균 : %.1f\n학점 : %s\n";
-
         String result = String.format(fmt, name, kor,
                 eng, mat, sum, mean, grd);
 
