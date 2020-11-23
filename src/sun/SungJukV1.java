@@ -17,10 +17,10 @@ package sun;
 public class SungJukV1 {
     public static void main(String[] args) {
         String name = "sun";
-        int kor = 99, eng = 98, met = 99, sum = 0;
+        int kor = 99, eng = 98, mat = 99, sum = 0;
         double mean = 0;
         char grd;
-        sum = kor + eng + met;
+        sum = kor + eng + mat;
         mean = sum / 3;
         grd = (mean >= 90) ? '수':
               (mean >= 90) ? '우':
@@ -30,7 +30,7 @@ public class SungJukV1 {
 
 
         System.out.printf("이름 : %s \n",name);
-        System.out.printf("국어 =%3d\n영어 =%3d\n수학 =%3d\n",kor,eng,met);
+        System.out.printf("국어 =%3d\n영어 =%3d\n수학 =%3d\n",kor,eng,mat);
         System.out.println("--------------------");
         System.out.printf("총점 = %3d\n평균 = %.1f\n",sum,mean);
         System.out.println("학점 = "+grd);
