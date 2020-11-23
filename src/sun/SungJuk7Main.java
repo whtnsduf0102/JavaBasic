@@ -21,8 +21,19 @@ import java.util.Scanner;
  */
 
 public class SungJuk7Main {
+    public static void main(String[] args) {
+        /*MidSungJuk2 msj2 = new MidSungJuk2();
+        msj2.readSungJuk();
+        msj2.computeSungJuk();
+        msj2.printSungJuk();*/
+
+        FinalSungJuk2 fsj2 = new FinalSungJuk2();
+        fsj2.readSungJuk();
+        fsj2.computeSungJuk();
+        fsj2.printSungJuk();
+    }
 }
-class MidSungJuk2 {
+abstract class SungJuk7 {
     protected String name;
     protected int kor;
     protected int eng;
@@ -31,17 +42,14 @@ class MidSungJuk2 {
     protected double mean;
     protected char grd;
 
-    public MidSungJuk2() {
+    public SungJuk7() {
     }
 
-    public MidSungJuk2(String name, int kor, int eng, int mat) {
+    public SungJuk7(String name, int kor, int eng, int mat) {
         this.name = name;
         this.kor = kor;
         this.eng = eng;
         this.mat = mat;
-        /*sum = 0;
-        mean = 0.0;
-        grd = '가';*/
     }
 
     public String getName() {
@@ -99,10 +107,18 @@ class MidSungJuk2 {
     public void setGrd(char grd) {
         this.grd = grd;
     }
+}
 
+interface ISungJukV7{
+    void readSungJuk();
+    void computeSungJuk();
+    void printSungJuk();
+}
 
-    protected void readSungJuk(){
+class MidSungJuk2 extends SungJuk7 implements ISungJukV7{
 
+    @Override
+    public void readSungJuk() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("이름 입력 : ");
@@ -113,11 +129,10 @@ class MidSungJuk2 {
         eng = sc.nextInt();
         System.out.print("수학점수입력 : ");
         mat = sc.nextInt();
+    }
 
-
-    } //readSungJuk
-
-    protected void computeSungJuk() {
+    @Override
+    public void computeSungJuk() {
         sum = kor + eng + mat;
         mean = (double)sum / 3;
         grd = (mean >= 90) ? '수':
@@ -126,8 +141,8 @@ class MidSungJuk2 {
                                 (mean >= 60) ? '양':'가';
     }
 
-
-    protected void printSungJuk() {
+    @Override
+    public void printSungJuk() {
         String fmt = "이름 : %s\n국어 : %d\n영어 : %d\n수학 : %d\n합계 : %d\n평균 : %.1f\n학점 : %s\n";
 
         String result = String.format(fmt, name, kor,
@@ -136,12 +151,56 @@ class MidSungJuk2 {
 
         System.out.println(result);
     }
-
 }
-class FinalSungJuk2 {
+
+class FinalSungJuk2 extends SungJuk7 implements ISungJukV7{
+
     protected int art;
     protected int sci;
-}
-interface FinalSungJuk2Ac{
-    String name();
+
+    public FinalSungJuk2() {
+    }
+
+    public FinalSungJuk2(int art, int sci) {
+        this.art = art;
+        this.sci = sci;
+    }
+    @Override
+    public void readSungJuk() {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("이름 입력 : ");
+        name = sc.nextLine();
+        System.out.print("국어점수입력 : ");
+        kor = sc.nextInt();
+        System.out.print("영어점수입력 : ");
+        eng = sc.nextInt();
+        System.out.print("수학점수입력 : ");
+        mat = sc.nextInt();
+        System.out.print("미술점수입력 : ");
+        art = sc.nextInt();
+        System.out.print("과학점수입력 : ");
+        sci = sc.nextInt();
+    }
+
+    @Override
+    public void computeSungJuk() {
+        sum = kor + eng + mat + art + sci;
+        mean = (double)sum / 5;
+        grd = (mean >= 90) ? '수':
+                (mean >= 80) ? '우':
+                        (mean >= 70) ? '미':
+                                (mean >= 60) ? '양':'가';
+    }
+
+    @Override
+    public void printSungJuk() {
+        String fmt = "이름 : %s\n국어 : %d\n영어 : %d\n수학 : %d\n" +
+                "미술 : %d\n과학 : %d\n합계 : %d\n평균 : %.1f\n학점 : %s\n";
+
+        String result = String.format(fmt, name, kor,
+                eng, mat, art, sci, sum, mean, grd);
+
+        System.out.println(result);
+    }
 }
