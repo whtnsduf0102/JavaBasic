@@ -7,7 +7,13 @@ package sun;
 *
 * 따라서, 추상클래스는 불완전 클래스이므로
 * 객체화 할 수 없음
-* 추상메서드나 추상클래스는 abstract라는 키워드 사용*/
+* 추상메서드나 추상클래스는 abstract라는 키워드 사용
+*
+* 실질적인예
+* github.com/javaee/servlet-spec
+* src/main/java/javax/servlet => Servlet.java
+* src/main/java/javax/servlet => GenericServlet.java
+* src/main/java/javax/servlet/http => httpServlet.java*/
 
 public class AbstractClass {
     public static void main(String[] args) {
