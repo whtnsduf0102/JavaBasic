@@ -12,7 +12,7 @@ public class SungJukVO {
     private String name;
     private int kor;
     private int eng;
-    private int met;
+    private int mat;
     private  int sum;
     private double mean;
     private char grd;
@@ -20,11 +20,11 @@ public class SungJukVO {
     public SungJukVO() {
     }
 
-    public SungJukVO(String name, int kor, int eng, int met, int sum, double mean, char grd) {
+    public SungJukVO(String name, int kor, int eng, int mat, int sum, double mean, char grd) {
         this.name = name;
         this.kor = kor;
         this.eng = eng;
-        this.met = met;
+        this.mat = mat;
         this.sum = sum;
         this.mean = mean;
         this.grd = grd;
@@ -54,12 +54,12 @@ public class SungJukVO {
         this.eng = eng;
     }
 
-    public int getMet() {
-        return met;
+    public int getMat() {
+        return mat;
     }
 
-    public void setMet(int met) {
-        this.met = met;
+    public void setMat(int met) {
+        this.mat = mat;
     }
 
     public int getSum() {

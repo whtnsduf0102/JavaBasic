@@ -39,7 +39,7 @@ public class SungJukService {
 
     /*입력받은 성적에 대하 총점, 평균, 학점을 계산하는 메서드*/
     public void computeSungJuk(SungJukVO sj){
-        sj.setSum(sj.getKor() + sj.getEng() + sj.getMet());
+        sj.setSum(sj.getKor() + sj.getEng() + sj.getMat());
         sj.setMean ( (double)sj.getSum() / 3);
 
         switch ((int)(sj.getMean()/10))
@@ -60,7 +60,7 @@ public class SungJukService {
         String fmt = "이름 : %s\n국어 : %d\n영어 : %d\n수학 : %d\n합계 : %d\n평균 : %.1f\n학점 : %s\n";
 
         String result = String.format(fmt, sj.getName(), sj.getKor(),
-                sj.getEng(), sj.getMet(), sj.getSum(), sj.getMean(), sj.getGrd());
+                sj.getEng(), sj.getMat(), sj.getSum(), sj.getMean(), sj.getGrd());
 
 
         System.out.println(result);
