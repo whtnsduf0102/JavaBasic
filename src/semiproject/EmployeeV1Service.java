@@ -1,6 +1,8 @@
 package semiproject;
 
 
+import sun.SungJukVO;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,6 +11,9 @@ import java.util.Scanner;
 public class EmployeeV1Service
         extends EmployeeV1genericService {
     List<EmployeeVO> empdata = new ArrayList<>();
+
+    EmployeeVO emp = null;
+
 
     @Override
     public void newInSa() {
@@ -24,43 +29,43 @@ public class EmployeeV1Service
         String hdate;
         String lname;*/
 
-        EmployeeVO emp = new EmployeeVO
+        emp = new EmployeeVO
                 (0,"","","","","","",
                         0,0.0,0,0);
 
         Scanner sc =new Scanner(System.in);
 
-        System.out.println("사번입력 : ");
+        System.out.print("사번입력 : ");
         emp.setEmpno(Integer.parseInt(sc.nextLine()));
 
-        System.out.println("성 입력 : ");
+        System.out.print("성 입력 : ");
         emp.setFname(sc.nextLine());
 
-        System.out.println("이름 입력: ");
+        System.out.print("이름 입력: ");
         emp.setLname(sc.nextLine());
 
-        System.out.println("이메일 입력 : ");
+        System.out.print("이메일 입력 : ");
         emp.setEmail(sc.nextLine());
 
-        System.out.println("전화번호 입력: ");
+        System.out.print("전화번호 입력: ");
         emp.setPhone(sc.nextLine());
 
-        System.out.println("입사일 입력: ");
+        System.out.print("입사일 입력: ");
         emp.setHdate(sc.nextLine());
 
-        System.out.println("직책 입력 : ");
+        System.out.print("직책 입력 : ");
         emp.setJobid(sc.nextLine());
 
-        System.out.println("월급 입력 : ");
+        System.out.print("월급 입력 : ");
         emp.setSal(Integer.parseInt(sc.nextLine()));
 
-        System.out.println("커미션 입력 : ");
+        System.out.print("커미션 입력 : ");
         emp.setComm(Double.parseDouble(sc.nextLine()));
 
-        System.out.println("상사번호 입력 : ");
+        System.out.print("상사번호 입력 : ");
         emp.setMgrid(Integer.parseInt(sc.nextLine()));
 
-        System.out.println("부서번호 입력 : ");
+        System.out.print("부서번호 입력 : ");
         emp.setDeptid(Integer.parseInt(sc.nextLine()));
 
 
