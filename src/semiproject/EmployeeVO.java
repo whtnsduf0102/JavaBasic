@@ -1,6 +1,13 @@
 package semiproject;
 
+/**
+ * 인사 정보 프로그램
+ * 사번empno, 이름fname, 성lname, 이메일email, 
+ * 전화번호phone, 입사일hdate, 직책jobid, 급여sal, 
+ * 수당comm, 상사mgrid, 부서deptid
+ */
 public class EmployeeVO {
+    // 멤버변수
     private int empno;
     private String fname;
     private String lname;
@@ -8,11 +15,12 @@ public class EmployeeVO {
     private String phone;
     private String hdate;
     private String jobid;
-    private int sal;
+    private int    sal;
     private double comm;
     private int mgrid;
     private int deptid;
 
+    // 생성자
     public EmployeeVO(int empno, String fname, String lname, String email, String phone, String hdate, String jobid, int sal, double comm, int mgrid, int deptid) {
         this.empno = empno;
         this.fname = fname;
@@ -27,9 +35,16 @@ public class EmployeeVO {
         this.deptid = deptid;
     }
 
-    public EmployeeVO() {
-
+    public EmployeeVO(int empno, String lname, String email, String jobid, int mgrid, int deptid) {
+        this.empno = empno;
+        this.lname = lname;
+        this.email = email;
+        this.jobid = jobid;
+        this.mgrid = mgrid;
+        this.deptid = deptid;
     }
+
+    public EmployeeVO() {  }
 
     public int getEmpno() {
         return empno;

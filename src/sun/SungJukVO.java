@@ -1,21 +1,24 @@
 package sun;
+
 /**
- * 파일명 : SungJukV5
+ * 파일명 : SungJukVO
  * 작성일 : 2020.11.20
  *
- * 프로그램설명 : 성적처리프로그램 V5
- * 이름, 국어, 영어, 수학점수를 키보드로 입력받아
- * 총점, 평균, 학점에 관한 변수를 정의한 클래스
+ * 프로그램 설명 : 성적처리프로그램 v5
+ * 이름,국어,영어,수학, 총점,평균,학점에
+ * 관한 변수를 정의한 클래스
  *
  */
 public class SungJukVO {
+    private int sjno;
     private String name;
     private int kor;
     private int eng;
     private int mat;
-    private  int sum;
+    private int sum;
     private double mean;
     private char grd;
+    private String regdate;
 
     public SungJukVO() {
     }
@@ -28,6 +31,34 @@ public class SungJukVO {
         this.sum = sum;
         this.mean = mean;
         this.grd = grd;
+    }
+
+    public SungJukVO(int sjno, String name, int kor, int eng, int mat, int sum, double mean, char grd, String regdate) {
+        this.sjno = sjno;
+        this.name = name;
+        this.kor = kor;
+        this.eng = eng;
+        this.mat = mat;
+        this.sum = sum;
+        this.mean = mean;
+        this.grd = grd;
+        this.regdate = regdate;
+    }
+
+    public int getSjno() {
+        return sjno;
+    }
+
+    public void setSjno(int sjno) {
+        this.sjno = sjno;
+    }
+
+    public String getRegdate() {
+        return regdate;
+    }
+
+    public void setRegdate(String regdate) {
+        this.regdate = regdate;
     }
 
     public String getName() {
@@ -58,7 +89,7 @@ public class SungJukVO {
         return mat;
     }
 
-    public void setMat(int met) {
+    public void setMat(int mat) {
         this.mat = mat;
     }
 

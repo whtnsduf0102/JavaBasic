@@ -5,26 +5,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class JDBCOrders3b {
+public class JDBCOrders3c {
         public static void main(String[] args) {
 
             Connection conn = null;
             PreparedStatement pstmt = null;
             ResultSet rs = null;
-            String sql = "select * from bookorders where orderid = ?";
+            String sql = "select * from bookorders where orderdate like ?";
             String fmt = "%s %s %s %s %s \n";
             StringBuilder sb = new StringBuilder();
 
             Scanner sc = new Scanner(System.in);
-            System.out.print("주문번호를 입력하세요 : ");
-            int order = Integer.parseInt(sc.nextLine());
-            // String order = sc.nextLine();
+            System.out.print("주문일자를 입력하세요 : ");
+            String order = sc.nextLine();
 
             conn = JDBCUtil.makeConn();
             try {
                 pstmt = conn.prepareStatement(sql);
-                pstmt.setInt(1, order);
-                //pstmt.setInt(1, Integer.parseInt(order));
+                pstmt.setString(1, order+'%');
+
                 rs = pstmt.executeQuery();
 
                 while(rs.next()){
